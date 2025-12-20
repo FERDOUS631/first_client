@@ -1,12 +1,8 @@
-/**
-* PHP Email Form Validation - v3.11
-* URL: https://bootstrapmade.com/php-email-form/
-* Author: BootstrapMade.com
-*/
+
 (function () {
   "use strict";
 
-  let forms = document.querySelectorAll('.php-email-form');
+  let forms = document.querySelectorAll('.email-form');
 
   forms.forEach( function(e) {
     e.addEventListener('submit', function(event) {
@@ -83,3 +79,48 @@
   }
 
 })();
+
+
+
+
+// contact validation
+document.getElementById("contactForm").addEventListener("submit", async function(e){
+    e.preventDefault();   // page reload বন্ধ রাখি
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+    try {
+        const response = await fetch("", {   // same page এ POST
+            method: "POST",
+            headers: {
+                "X-CSRFToken": csrfToken
+            },
+            body: formData
+        });
+
+        if(response.ok){
+            document.querySelector(".sent-message").style.display = "block";
+            document.querySelector(".error-message").style.display = "none";
+            form.reset();
+        } else {
+            document.querySelector(".sent-message").style.display = "none";
+            document.querySelector(".error-message").style.display = "block";
+        }
+
+    } catch (error) {
+        document.querySelector(".sent-message").style.display = "none";
+        document.querySelector(".error-message").style.display = "block";
+    }
+});
+
+const inputs = document.querySelectorAll("#contactForm input, #contactForm textarea");
+
+inputs.forEach(input => {
+  input.addEventListener("input", function(){
+      document.querySelector(".sent-message").style.display = "none";
+      document.querySelector(".error-message").style.display = "none";
+  });
+});

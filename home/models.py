@@ -60,5 +60,18 @@ class resume(models.Model):
         return self.resume_title
     
 
+class contactMessage(models.Model):
+    name=models.CharField(max_length=100)
+    email=models.EmailField()
+    subject=models.CharField(max_length=200)
+    message=models.TextField()
 
+    def __str__(self):
+        return f"Message from {self.name} - {self.subject}"
+    
+class HeroSection(models.Model):
+    name = models.CharField(max_length=100)
+    typed_items = models.TextField()   
+    def __str__(self):
+        return self.name
 

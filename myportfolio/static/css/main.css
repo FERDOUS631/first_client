@@ -91,7 +91,7 @@ h6 {
 
 /* PHP Email Form Messages
 ------------------------------*/
-.php-email-form .error-message {
+.email-form .error-message {
   display: none;
   background: #df1529;
   color: #ffffff;
@@ -101,7 +101,7 @@ h6 {
   font-weight: 600;
 }
 
-.php-email-form .sent-message {
+.email-form .sent-message {
   display: none;
   color: #ffffff;
   background: #059652;
@@ -111,7 +111,7 @@ h6 {
   font-weight: 600;
 }
 
-.php-email-form .loading {
+.email-form .loading {
   display: none;
   background: var(--surface-color);
   text-align: center;
@@ -119,7 +119,7 @@ h6 {
   margin-bottom: 24px;
 }
 
-.php-email-form .loading:before {
+.email-form .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -2219,14 +2219,14 @@ section,
   color: var(--default-color);
 }
 
-.contact .php-email-form {
+.contact .email-form {
   background: var(--surface-color);
   padding: 40px;
   border-radius: 10px;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
-.contact .php-email-form .form-control {
+.contact .email-form .form-control {
   color: var(--default-color);
   background-color: var(--surface-color);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
@@ -2236,20 +2236,20 @@ section,
   transition: 0.3s;
 }
 
-.contact .php-email-form .form-control:focus {
+.contact .email-form .form-control:focus {
   border-color: var(--accent-color);
   box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 80%);
 }
 
-.contact .php-email-form .form-control::placeholder {
+.contact .email-form .form-control::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-.contact .php-email-form textarea.form-control {
+.contact .email-form textarea.form-control {
   min-height: 120px;
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .email-form button[type=submit] {
   background: var(--accent-color);
   color: var(--contrast-color);
   border: none;
@@ -2261,7 +2261,7 @@ section,
   transition: 0.3s;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
   transform: translateY(-2px);
 }
@@ -2285,7 +2285,7 @@ section,
     font-size: 16px;
   }
 
-  .contact .php-email-form {
+  .contact .email-form {
     padding: 30px 20px;
   }
 }
@@ -4260,7 +4260,6 @@ section,
 #hero .row{
   justify-content: center;
 }
-#about,#footer,#portfolio,#service{
+#about,#footer{
   z-index: 1000;
 }
-

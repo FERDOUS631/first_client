@@ -8,6 +8,8 @@ admin.site.register(about)
 admin.site.register(Skill)
 admin.site.register(logo)
 admin.site.register(resume)
+admin.site.register(contactMessage)
+admin.site.register(HeroSection)
 
 
 # class logoAdmin(admin.ModelAdmin):
