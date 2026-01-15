@@ -314,3 +314,26 @@ inputs.forEach(input => {
       document.querySelector(".error-message").style.display = "none";
   });
 });
+
+// ad section removal after 5 seconds
+function manageAd() {
+    const adBox = document.getElementById('ad-container');
+    const adSrc = "https://pl28485754.effectivegatecpm.com/b7/d9/37/b7d93770722e6b20f0f66e82c16cce0e.js";
+    let isWaiting = false;
+
+    setInterval(() => {
+        if (!isWaiting && (adBox.innerHTML.trim() === "" || adBox.style.display === 'none')) {
+            isWaiting = true;
+            setTimeout(() => {
+                adBox.style.display = 'block';
+                adBox.innerHTML = ""; 
+                const newScript = document.createElement('script');
+                newScript.src = adSrc;
+                adBox.appendChild(newScript);
+                isWaiting = false;
+            }, 10000); 
+        }
+    }, 5000);
+}
+
+window.onload = manageAd;
